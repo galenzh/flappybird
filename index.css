@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  height: 100vh;
+  max-height: 600px;
+  width: 288px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #ded895;
+  position: relative;
+}
+.game-bg {
+  width: 576px;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(images/bg_day.png) repeat-x;
+}
+.land-bg {
+  width: 576px;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(images/land.png) repeat-x left 400px;
+}
+.pipe {
+  height: 400px;
+  width: 288px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.pipe-down, .pipe-up {
+  width: 40px;
+  height: 280px;
+  background: url(images/pipe_down.png);
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.pipe-up {
+  background-image: url(images/pipe_up.png);
+}
+.bird {
+  width: 35px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+.bird-bg {
+  width: 105px;
+  height: 24px;
+  background: url(images/bird0_0.png) no-repeat,url(images/bird0_1.png) 35px 0px/35px 35px no-repeat,url(images/bird0_2.png) 70px 0px/30px 35px no-repeat;
+  background-size: 35px 24px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  animation: bird-fly steps(3,end) 0.5s infinite;
+}
+@keyframes bird-fly{
+  100% {transform: translateX(-105px);}
+}
+.title {
+  width: 100px;
+  height: 30px;
+  position: fixed;
+  background: url(images/title.png);
+  background-size: 100% 100%;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 100px;
+  z-index: 10;
+}
+.start {
+  width: 80px;
+  height: 50px;
+  position: fixed;
+  background: url(images/button_play.png);
+  background-size: 100% 100%;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 250px;
+  z-index: 10;
+}
+.crashing {
+  animation: crashing 1s ease-in;
+}
+@keyframes crashing {
+  100% {
+    top: 600px;
+  }
+}
+.score {
+  position: absolute;
+  font-size: 22px;
+  top: 15px;
+  right: 18px;
+  font-weight: bold;
+  color: #FFF;
+  z-index: 5;
+  display: none;
+}
+.game-over {
+  width: 204px;
+  height: 54px;
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  margin-left: -102px;
+  z-index: 10;
+  display: none;
+  background: url(images/text_game_over.png);
+}
+audio {
+  display: none;
+}
+.shake {
+  animation: shake 0.5s;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

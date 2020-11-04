@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" id="viewport" content="target-densitydpi=device-dpi,width=288,user-scalable=no"/>
+  <title>Flappy Bird</title>
+  <link rel="stylesheet" href="index.css?v=1">
+</head>
+<body>
+  <div class="container">
+    <div id="sky" class="game-bg"></div>
+    <div id="land" class="land-bg"></div>
+    <div class="pipe">
+      <div id="pipeUp0" class="pipe-down"></div>
+      <div id="pipeDown0" class="pipe-up"></div>
+      <div id="pipeUp1" class="pipe-down"></div>
+      <div id="pipeDown1" class="pipe-up"></div>
+    </div>
+    <div id="bird" class="bird"><div class="bird-bg"></div></div>
+    <div id="score" class="score"></div>
+  </div>
+  <div id="title" class="title"></div>
+  <div id="gameover" class="game-over"></div>
+  <div id="start" class="start"></div>
+  <audio id="wing" src="https://flynngao.github.io/FlappyTube/res/sfx_wing.mp3"></audio>
+  <audio id="crash" src="https://flynngao.github.io/FlappyTube/res/sfx_die.mp3"></audio>
+  <audio id="hit" src="https://flynngao.github.io/FlappyTube/res/sfx_hit.mp3"></audio>
+  <script src="index.js?v=1"></script>
+</body>
+</html>
