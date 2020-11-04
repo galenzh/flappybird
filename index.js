@@ -43,7 +43,7 @@ Game.prototype.reset = function() {
   this.scorePanel.hide();
 }
 Game.prototype.start = function() {
-  this.counter = -50; //开始的时候延迟一下
+  this.counter = -50; //delay the appearance of pipes
   this.isRunning = true;
   this.bird.dom.style.left = this.bird.x + 'px';
   this.scorePanel.show();
@@ -81,7 +81,7 @@ Game.prototype.update = function() {
   }
 }
 Game.prototype.checkCollision = function() {
-  if(this.bird.y > 370) { //检测地面
+  if(this.bird.y > 370) { //check if the bird is down on the land
     return true;
   }
   for(var i=0; i<this.pipe.length; i++) {
@@ -148,12 +148,12 @@ function Pipe(num) {
 }
 Pipe.prototype.random = function() {
   this.x = Game.WIDTH;
-  this.y = -200 + Math.random() * 140; //-200是上管道的最小值
+  this.y = -200 + Math.random() * 140; //-200 is the minium value of top pipe
 }
 Pipe.prototype.update = function() {
   this.x -= this.speed;
   this.domUp.style.transform = 'translate('+this.x+'px,'+this.y+'px)';
-  this.domDown.style.transform = 'translate('+this.x+'px,'+(this.y + 288 + 100) +'px)';//288是上管道高度，200是上下管道间距
+  this.domDown.style.transform = 'translate('+this.x+'px,'+(this.y + 288 + 100) +'px)';//288 is top pipe, 200 is the space between top and down pipe.
 }
 Pipe.prototype.reset = function() {
   this.x = -100;
