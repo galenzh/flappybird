@@ -15,14 +15,12 @@ function Game() {
   this.isRunning = false;
   this.isCrashing = false;
   this.counter = 0;
-  this.preStamp = 0;
 }
 Game.WIDTH = 288;
 Game.HEIGHT = 400;
 Game.prototype.init = function() {
   var game = this;
   function loop(stamp) {
-    game.preStamp = stamp;
     game.update();
     requestAnimationFrame(loop);
   }
